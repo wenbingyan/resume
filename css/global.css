@@ -384,14 +384,14 @@ color: #c7c8c7;
 }
 .projectTitle{
     line-height: 2;
-    font-size: 72px;
-    color: white;
-
+    font-size: 1rem;
 }
 .projectMsg{
-    line-height: 2;
-    font-size: 51px;
-    color: white;
+    line-height: 1.5;
+    font-size: 0.7rem;
     padding: 0 24px;
+}
+.fontColor{
+    color:#636060;
 }
 
