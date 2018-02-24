@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Ross</title>
+    <link rel="stylesheet" href="css/weuix.min.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/zepto.fullpage.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <!--<link rel="stylesheet" href="css/animate.css">-->
+    <script src="./js/recruitH5-vendor-0.1.0.js"></script>
+    <link rel="stylesheet" href="css/firstTothird.css">
+</head>
+<body>
+    <div class="wp">
+        <div class="wp-inner">
+            <div class="page page1">
+                <div class="js-animate first_recruitLogo" data-animate="enterFromRight" data-delay=".1s" ></div>
+                <div class="js-animate first_logo" data-animate="fadeIn" data-delay="1.1s"></div>
+                <div class="js-animate first_arrow" data-animate="enterFromLeft" data-delay=".6s"></div>
+                <div class="js-animate first_earth" data-animate="rubberBand" data-delay="2s"></div>
+                <div class="js-animate first_slogan" data-animate="slideUp" data-delay="2.6s"></div>
+            </div>
+           <div class="page page2">
+                <div class="js-animate second_pic1"  data-animate="fadeIn" data-delay=".1s"></div>
+                <div class="js-animate second_pic2"  data-animate="fadeInDelay" data-delay=".9s"></div>
+                <div class="js-animate second_title"  data-animate="enterFromLeft" data-delay="1.7s"></div>
+                <div class="js-animate second_info"  data-animate="fadeIn" data-delay="2.3s">
+                    <span>2015年6月-至今</span>
+                    <span>面向云安全、终端安全、应用安全及安全服务领域</span>
+                </div>
+                <div class="js-animate second_slogen1"  data-animate="enterFromLeft" data-delay="3s"></div>
+                <div class="js-animate second_slogen2"  data-animate="enterFromRight" data-delay="3.4s"></div>
+                <div class="js-animate second_slogen3"  data-animate="enterFromLeft"data-delay="3.8s"></div>
+            </div>
+            <div class="page page3">
+                <div class="js-animate jobList1 jobList animated" data-animate="fadeInRight" data-delay=".1s"></div>
+                <div class="js-animate jobList2 jobList animated" data-animate="bounceInUp" data-delay=".8s"></div>
+                <div class="js-animate jobList3 jobList animated" data-animate="fadeInRight" data-delay="1.5s"></div>
+                <div class="js-animate jobList4 jobList animated" data-animate="bounceInUp" data-delay="2.2s"></div>
+                <div class="js-animate jobList5 jobList animated" data-animate="slideUp" data-delay="2.9s" style="margin-top:2rem;"></div>
+                <div class="js-animate jobList6 jobList animated" data-animate="fadeIn" data-delay="3s"></div>
+            </div>
+            <div class="page page4">
+                <div class="js-animate projectTitle" data-animate="enterFromLeft" data-delay=".1s">主要项目介绍</div>
+                <div class="js-animate projectMsg" data-animate="fadeIn" data-delay=".7s">
+                    杰思猎鹰，在项目之初，该产品整个前端框架尚未实现前后端分离，项目核心功能路由与权限控制利用php代码实现，所以整个项目采用全文件php后缀来兼容php语法。不同的功能采用组件化开发，相对独立，又确保了与整个文件的耦合。项目初期技术栈定位于大量的原生JS与jquery，主要功能插件来自dataTable.js与echat.js，这一阶段，我负责与产品探讨确定产品需求，完成初期mockup，然后与server，DB共同探讨数据的来源，接口的定义,然后进行开发。随着产品的逐渐深入，产品由数据展示化改变为数据可视化，选择大量echats，jsTree，svg来展示数据，并且基于项目数据展示的基本定位，整个项目决定采用mvvm思想，实现数据驱动，通过数据来控制显示视图页面,整个项目框架重心开始向vue.js偏移，在这一阶段，我负责整个项目vue框架的重构，用vue-router代替之前的php路由，用vuex来管理之前存在session里面的用户资料和权限。
+                </div>
+            </div>
+            <div class="page page5">
+                <div class="js-animate" data-animate="fadeIn" data-delay=".1s">
+                    <div class="banner"></div>
+                </div>
+                <div class="js-animate" data-animate="enterFromLeft" data-delay=".7s">
+                    <div class="first-title">
+                    </div>
+                </div>
+                <div class="js-animate"  data-animate="fadeIn" data-delay="1.4s">
+                    <div class="second-title" >
+                        <div>善于学习</div>
+                        <div>热爱生活</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="bottom-banner">
+                        <div class="first js-animate" data-animate="enterFromLeft" data-delay="2.2s"></div>
+                        <div class="second js-animate" data-animate="enterFromRight" data-delay="2.6s"></div>
+                        <div class="third js-animate" data-animate="enterFromLeft" data-delay="3s"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="start"><b></b></span>
+    <!-- <script src="js/zepto.js"></script> -->
+    <!-- <script src="../src/zepto.fullpage.js"></script> -->
+    
+    <script>
+        (function(win,doc){
+            win.addEventListener('resize',change,false);
+            function change(){
+                doc.documentElement.style.fontSize = doc.documentElement.clientWidth*20/320+'px';
+            }
+            change();
+        })(window,document);
+        //加载下拉列表
+        $('.wp-inner').fullpage({
+            change: function (e) {
+                // 移除动画属性
+                // console.log(e.cur)
+                $('.page').eq(e.cur).find('.js-animate').each(function() {
+                    $(this).hide().removeClass($(this).data('animate')).hide();
+                });
+            },
+            afterChange: function (e) {
+                // 添加动画属性
+                // console.log(e)
+                if(e.cur=="4"){
+                    $(".start").hide();
+                }else{
+                    $(".start").show()
+                }
+                $('.page').eq(e.cur).find('.js-animate')
+                    .each(function () {
+                        $(this).show().css("animation-delay",$(this).data('delay')).addClass($(this).data('animate'));
+                        // $(".form-list:after").show();
+                    });
+            }
+        });
+        
+    </script>
+</body>
+</html>
